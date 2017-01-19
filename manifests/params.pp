@@ -28,10 +28,12 @@ class varnish::params {
         }
         default: {
           # Amazon Linux
+          # we can not rely on 'operatingsystemmajrelease' fact, since Amazon Linux gives "4".
+          # so we nail it on el6 and Varnish version 4.0:
           $addrepo            = true
-          $repoclass          = "varnish::repo::el${::operatingsystemmajrelease}"
+          $repoclass          = "varnish::repo::el6"
           $sysconfig          = '/etc/sysconfig/varnish'
-          $varnish_version    = '3.0'
+          $varnish_version    = '4.0'
           $vcl_reload         = '/usr/bin/varnish_reload_vcl'
         }
       }
