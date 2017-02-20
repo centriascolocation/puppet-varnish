@@ -11,7 +11,7 @@ class varnish::config {
           $sysconfig_template = "varnish/el${::operatingsystemmajrelease}/varnish-3.sysconfig.erb"
         }
         default: {
-          $sysconfig_template = "varnish/el${::operatingsystemmajrelease}/varnish-4.sysconfig.erb"
+          $sysconfig_template = "varnish/el6/varnish-4.sysconfig.erb"
         }
       }
     }
